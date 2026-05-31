@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Securify Premium - Cyber Command Center</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for high-tech premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main Decorative Neon Glow Blobs -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <!-- App Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="shield-icon">🛡️</span> Securify<span class="logo-dot">.io</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-item active" data-target="dashboard-page">Dashboard</a></li>
+            <li><a href="#" class="nav-item" data-target="phishing-page">Phishing Sim</a></li>
+            <li><a href="#" class="nav-item" data-target="password-page">Pass Auditor</a></li>
+            <li><a href="#" class="nav-item" data-target="resources-page">Threat Core</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <!-- PAGE 1: DASHBOARD -->
+        <section id="dashboard-page" class="webpage active">
+            <div class="welcome-banner">
+                <span class="badge">SYSTEMS ONLINE</span>
+                <h1>Cyber Awareness & Command Hub</h1>
+                <p>An interactive, multi-module environment built to simulate real-world attack vectors and analyze modern structural cryptographic integrity.</p>
+            </div>
+
+            <h2 class="section-title">Explore Active Modules</h2>
+            <div class="grid-layout">
+                <div class="feature-card component-card card-purple" onclick="document.querySelector('[data-target=\'phishing-page\']').click()">
+                    <div class="card-icon">🎯</div>
+                    <h3>Social Engineering Phishing Simulator</h3>
+                    <p>Test your defensive instincts against real-world domain spoofing and malicious urgent communication matrices.</p>
+                    <span class="action-link">Launch Module &rarr;</span>
+                </div>
+                <div class="feature-card component-card card-cyan" onclick="document.querySelector('[data-target=\'password-page\']').click()">
+                    <div class="card-icon">⚡</div>
+                    <h3>Algorithmic Password Auditor</h3>
+                    <p>Analyze complexity constraints, calculate string entropy, and measure structural vulnerabilities against cracking algorithms.</p>
+                    <span class="action-link">Launch Module &rarr;</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: PHISHING SIMULATOR -->
+        <section id="phishing-page" class="webpage">
+            <h2 class="page-title">Phishing Vulnerability Simulator</h2>
+            <p class="subtitle">Can you spot the security anomalies in this urgent corporate communication?</p>
+            
+            <div class="email-client">
+                <div class="email-header">
+                    <p><strong>From:</strong> security-update@noreply-amaz0n-verification.com <span class="header-tag">External Source</span></p>
+                    <p><strong>Subject:</strong> ⚠️ CRITICAL: Suspicious Login Detected - Action Required Immediately</p>
+                </div>
+                <div class="email-body">
+                    <p>Dear Valued User,</p>
+                    <p>We detected an unauthorized login attempt to your cloud database from an unfamiliar IP address.</p>
+                    <p>Please click the link below to verify your credential profile immediately. Failure to verify within 24 hours will result in permanent account suspension.</p>
+                    <div class="link-container">
+                        <a href="#" class="fake-link" onclick="event.preventDefault();">http://secure-login.amaz0n-portal.net/auth-login</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-controls">
+                <button class="btn btn-danger" onclick="checkPhishingResult(true)">Flag as Phishing Threat</button>
+                <button class="btn btn-success" onclick="checkPhishingResult(false)">Trust & Proceed</button>
+            </div>
+            <div id="phishing-feedback" class="feedback-wrapper"></div>
+        </section>
+
+        <!-- PAGE 3: PASSWORD AUDITOR -->
+        <section id="password-page" class="webpage">
+            <h2 class="page-title">Password Entropy & Strength Auditor</h2>
+            <p class="subtitle">Input a complex string array to analyze real-time structural strength metrics.</p>
+            
+            <div class="input-container-box">
+                <div class="input-group">
+                    <input type="password" id="password-input" placeholder="Type a password to test security criteria..." oninput="auditPassword()">
+                    <button class="btn btn-secondary" id="toggle-btn" onclick="togglePasswordVisibility()">Show Text</button>
+                </div>
+
+                <div class="audit-results">
+                    <div class="metric-status-row">
+                        <span>Security Level:</span>
+                        <strong id="strength-label">Awaiting Input...</strong>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div id="strength-meter" class="progress-bar"></div>
+                    </div>
+                    <ul class="feedback-list" id="password-criteria">
+                        <li id="crit-length" class="fail">Minimum 8 characters length</li>
+                        <li id="crit-upper" class="fail">Includes capital characters (A-Z)</li>
+                        <li id="crit-number" class="fail">Includes numerical digits (0-9)</li>
+                        <li id="crit-special" class="fail">Includes non-alphanumeric tokens (@, #, $, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: THREAT DATABASE -->
+        <section id="resources-page" class="webpage">
+            <h2 class="page-title">Vulnerability & Threat Vector Database</h2>
+            <p class="subtitle">Live knowledge base documenting operational modern malware threat tiers.</p>
+            
+            <div class="table-scroll-container">
+                <table class="threat-table">
+                    <thead>
+                        <tr>
+                            <th>Threat Vector</th>
+                            <th>Primary Delivery Method</th>
+                            <th>Impact Severity</th>
+                            <th>Remediation Protocol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ransomware Matrix</strong></td>
+                            <td>Malicious Email Attachments</td>
+                            <td><span class="severity critical">CRITICAL</span></td>
+                            <td>Immutable offline data backups & network isolation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Man-in-the-Middle</strong></td>
+                            <td>Unsecured Public Wi-Fi</td>
+                            <td><span class="severity medium">MEDIUM</span></td>
+                            <td>Enforcement of corporate end-to-end transport layer TLS</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SQL Injection (SQLi)</strong></td>
+                            <td>Unsanitized Form Input Fields</td>
+                            <td><span class="severity high">HIGH</span></td>
+                            <td>Parameterized runtime queries & prepared statements</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
